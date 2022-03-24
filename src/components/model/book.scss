@@ -1,0 +1,16 @@
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 30px;
+
+  .progress-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
