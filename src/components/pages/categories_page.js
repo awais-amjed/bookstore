@@ -1,7 +1,12 @@
 import React from 'react';
+import Navbar from '../model/navbar';
 
 const CategoriesPage = () => (
-  <h1>Categories Page</h1>
+  <div className="content">
+    <div id="categories-page">
+      <Navbar />
+    </div>
+  </div>
 );
 
 export default CategoriesPage;
