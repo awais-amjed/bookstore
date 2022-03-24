@@ -5,6 +5,7 @@ const CategoriesPage = () => (
   <div className="content">
     <div id="categories-page">
       <Navbar />
+      <button type="button">Check Status</button>
     </div>
   </div>
 );
