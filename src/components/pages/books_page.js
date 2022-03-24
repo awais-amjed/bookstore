@@ -37,25 +37,35 @@ const BooksPage = () => {
     <div className="content">
       <div id="books-page">
         <Navbar />
-        {booksList.map(({
-          id,
-          category,
-          name,
-          author,
-          progress,
-          currentChapter,
-          chapterName,
-        }) => (
-          <Book
-            key={id}
-            category={category}
-            name={name}
-            author={author}
-            progress={progress}
-            chapterName={chapterName}
-            currentChapter={currentChapter}
-          />
-        ))}
+        <ul id="books-list">
+          {booksList.map(({
+            id,
+            category,
+            name,
+            author,
+            progress,
+            currentChapter,
+            chapterName,
+          }) => (
+            <Book
+              key={id}
+              category={category}
+              name={name}
+              author={author}
+              progress={progress}
+              chapterName={chapterName}
+              currentChapter={currentChapter}
+            />
+          ))}
+        </ul>
+        <div id="add-book">
+          <h2>ADD NEW BOOK</h2>
+          <form id="new-book-form">
+            <input type="text" placeholder="Book Title" />
+            <input type="text" placeholder="Category" />
+            <input type="submit" value="ADD BOOK" />
+          </form>
+        </div>
       </div>
     </div>
   );

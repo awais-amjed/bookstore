@@ -10,10 +10,10 @@ const Book = ({
   currentChapter,
   chapterName,
 }) => (
-  <div className="book">
+  <li className="book">
     <div className="book-description">
       <p>{category}</p>
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <p>{author}</p>
       <div className="book-buttons">
         <button type="button">Comments</button>
@@ -42,7 +42,7 @@ const Book = ({
       </p>
       <button type="button">Update Progress</button>
     </div>
-  </div>
+  </li>
 );
 
 Book.propTypes = {
