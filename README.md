@@ -2,7 +2,7 @@
 
 # Bookstore
 
-> A website for all the fans of mathematics
+> Book Library to keep a track of all your books
 
 ![screenshot](./app_screenshot.png)
 
