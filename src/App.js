@@ -1,8 +1,18 @@
 import './App.scss';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import BooksPage from './components/pages/books_page';
+import CategoriesPage from './components/pages/categories_page';
 
 function App() {
   return (
-    <h1>Book Store</h1>
+    <BrowserRouter>
+      <div id="app">
+        <Routes>
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="*" element={<BooksPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
