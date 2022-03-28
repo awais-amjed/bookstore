@@ -8,7 +8,7 @@ const addBook = ({ genre, bookName, authorName }) => ({
   authorName,
 });
 
-const removeBook = (id) => ({
+const removeBook = ({ id }) => ({
   type: REMOVE_BOOK,
   id,
 });
