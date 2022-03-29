@@ -1,11 +1,10 @@
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const addBook = ({ genre, bookName, authorName }) => ({
+const addBook = ({ genre, bookName }) => ({
   type: ADD_BOOK,
   genre,
   bookName,
-  authorName,
 });
 
 const removeBook = ({ id }) => ({
@@ -19,10 +18,10 @@ const booksReducer = (state = [], actions) => {
       return [
         ...state,
         {
-          id: state.at(state.length - 1).id + 1,
+          id: state.length === 0 ? 0 : state.at(state.length - 1).id + 1,
           genre: actions.genre,
           bookName: actions.bookName,
-          authorName: actions.authorName,
+          authorName: null,
           progress: 0,
           currentChapter: 0,
           chapterName: null,

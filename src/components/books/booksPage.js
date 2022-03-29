@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Navbar from '../navbar/navbar';
 import Book from './book';
+import AddBookForm from './addBookForm';
 
 const BooksPage = () => {
   const booksList = useSelector((state) => state.books);
@@ -33,11 +34,7 @@ const BooksPage = () => {
         </ul>
         <div id="add-book">
           <h2>ADD NEW BOOK</h2>
-          <form id="new-book-form">
-            <input type="text" placeholder="Book Title" />
-            <input type="text" placeholder="Category" />
-            <input type="submit" value="ADD BOOK" />
-          </form>
+          <AddBookForm />
         </div>
       </div>
     </div>
