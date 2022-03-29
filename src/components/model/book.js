@@ -35,10 +35,10 @@ const Book = ({
     <div className="chapter-status">
       <p>CURRENT CHAPTER</p>
       <p>
-        {currentChapter ? `Chapter ${currentChapter}` : ''}
-        {currentChapter && chapterName ? ': "' : ''}
+        {currentChapter === 0 ? 'Not Started Yet!' : `Chapter ${currentChapter}`}
+        {currentChapter !== 0 && chapterName ? ': "' : ''}
         {chapterName ?? ''}
-        {currentChapter && chapterName ? '"' : ''}
+        {currentChapter !== 0 && chapterName ? '"' : ''}
       </p>
       <button type="button">Update Progress</button>
     </div>

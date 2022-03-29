@@ -13,12 +13,7 @@ const removeBook = ({ id }) => ({
   id,
 });
 
-const booksReducer = (state = [{
-  id: 0,
-  genre: 'meow',
-  bookName: 'emow',
-  authorName: 'meow',
-}], actions) => {
+const booksReducer = (state = [], actions) => {
   switch (actions.type) {
     case ADD_BOOK:
       return [
@@ -28,6 +23,9 @@ const booksReducer = (state = [{
           genre: actions.genre,
           bookName: actions.bookName,
           authorName: actions.authorName,
+          progress: 0,
+          currentChapter: 0,
+          chapterName: null,
         },
       ];
     case REMOVE_BOOK:
