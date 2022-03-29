@@ -8,6 +8,7 @@ const Navbar = () => (
       <NavLink className="link-button" to="/">
         BOOKS
       </NavLink>
+      &nbsp;
       <NavLink className="link-button" to="/categories">
         CATEGORIES
       </NavLink>

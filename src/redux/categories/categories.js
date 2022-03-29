@@ -1,8 +1,7 @@
 const CHECK_STATUS = 'CHECK_STATUS';
 
-const checkStatus = ({ id }) => ({
+const checkStatus = () => ({
   type: CHECK_STATUS,
-  id,
 });
 
 const categoriesReducer = (state = [], actions) => {
