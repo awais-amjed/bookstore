@@ -7,22 +7,22 @@ const AddBookForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const genreElement = event.target.elements.genre;
+    const authorNameElement = event.target.elements.authorName;
     const bookNameElement = event.target.elements.bookName;
 
     dispatch(addBook({
-      genre: genreElement.value,
+      authorName: authorNameElement.value,
       bookName: bookNameElement.value,
     }));
 
-    genreElement.value = '';
+    authorNameElement.value = '';
     bookNameElement.value = '';
   };
 
   return (
     <form id="new-book-form" onSubmit={handleSubmit}>
       <input type="text" placeholder="Book Title" name="bookName" required />
-      <input type="text" placeholder="Category" name="genre" required />
+      <input type="text" placeholder="Author" name="authorName" required />
       <input type="submit" value="ADD BOOK" />
     </form>
   );

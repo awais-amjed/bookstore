@@ -12,9 +12,9 @@ const Book = ({
 }) => (
   <li className="book">
     <div className="book-description">
-      <p>{genre}</p>
+      <p>{genre ?? ''}</p>
       <h3>{bookName}</h3>
-      <p>{authorName ?? ''}</p>
+      <p>{authorName}</p>
       <div className="book-buttons">
         <button type="button">Comments</button>
         <button type="button">Remove</button>
@@ -46,16 +46,16 @@ const Book = ({
 );
 
 Book.propTypes = {
-  genre: PropTypes.string.isRequired,
+  genre: PropTypes.string,
   bookName: PropTypes.string.isRequired,
-  authorName: PropTypes.string,
+  authorName: PropTypes.string.isRequired,
   progress: PropTypes.number.isRequired,
   currentChapter: PropTypes.number,
   chapterName: PropTypes.string,
 };
 
 Book.defaultProps = {
-  authorName: null,
+  genre: null,
   currentChapter: null,
   chapterName: null,
 };
