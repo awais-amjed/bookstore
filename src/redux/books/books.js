@@ -19,7 +19,7 @@ const booksReducer = (state = [], actions) => {
         ...state,
         {
           id: state.length === 0 ? 0 : state.at(state.length - 1).id + 1,
-          genre: null,
+          category: null,
           bookName: actions.bookName,
           authorName: actions.authorName,
           progress: 0,

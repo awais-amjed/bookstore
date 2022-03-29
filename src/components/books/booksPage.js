@@ -14,7 +14,7 @@ const BooksPage = () => {
         <ul id="books-list">
           {booksList.map(({
             id,
-            genre,
+            category,
             bookName,
             authorName,
             progress,
@@ -23,7 +23,7 @@ const BooksPage = () => {
           }) => (
             <Book
               key={id}
-              genre={genre}
+              category={category}
               bookName={bookName}
               authorName={authorName}
               progress={progress}
