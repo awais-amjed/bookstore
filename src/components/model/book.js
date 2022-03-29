@@ -3,18 +3,18 @@ import './book.scss';
 import PropTypes from 'prop-types';
 
 const Book = ({
-  category,
-  name,
-  author,
+  genre,
+  bookName,
+  authorName,
   progress,
   currentChapter,
   chapterName,
 }) => (
   <li className="book">
     <div className="book-description">
-      <p>{category}</p>
-      <h3>{name}</h3>
-      <p>{author}</p>
+      <p>{genre}</p>
+      <h3>{bookName}</h3>
+      <p>{authorName}</p>
       <div className="book-buttons">
         <button type="button">Comments</button>
         <button type="button">Remove</button>
@@ -46,9 +46,9 @@ const Book = ({
 );
 
 Book.propTypes = {
-  category: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  bookName: PropTypes.string.isRequired,
+  authorName: PropTypes.string.isRequired,
   progress: PropTypes.number.isRequired,
   currentChapter: PropTypes.number,
   chapterName: PropTypes.string,
