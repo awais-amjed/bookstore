@@ -19,7 +19,7 @@ const booksReducer = (state = [], actions) => {
       return [
         ...state,
         {
-          id: state.length,
+          id: state.at(state.length - 1).id + 1,
           genre: actions.genre,
           bookName: actions.bookName,
           authorName: actions.authorName,
