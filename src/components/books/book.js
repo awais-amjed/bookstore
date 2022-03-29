@@ -9,6 +9,7 @@ const Book = ({
   progress,
   currentChapter,
   chapterName,
+  onRemove,
 }) => (
   <li className="book">
     <div className="book-description">
@@ -17,7 +18,7 @@ const Book = ({
       <p>{authorName}</p>
       <div className="book-buttons">
         <button type="button">Comments</button>
-        <button type="button">Remove</button>
+        <button type="button" onClick={onRemove}>Remove</button>
         <button type="button">Edit</button>
       </div>
     </div>
@@ -52,6 +53,7 @@ Book.propTypes = {
   progress: PropTypes.number.isRequired,
   currentChapter: PropTypes.number,
   chapterName: PropTypes.string,
+  onRemove: PropTypes.func.isRequired,
 };
 
 Book.defaultProps = {

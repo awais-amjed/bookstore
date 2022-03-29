@@ -1,11 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../navbar/navbar';
 import Book from './book';
 import AddBookForm from './addBookForm';
+import { removeBook } from '../../redux/books/books';
 
 const BooksPage = () => {
   const booksList = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
   return (
     <div className="content">
@@ -29,6 +31,7 @@ const BooksPage = () => {
               progress={progress}
               chapterName={chapterName}
               currentChapter={currentChapter}
+              onRemove={() => dispatch(removeBook({ id }))}
             />
           ))}
         </ul>
