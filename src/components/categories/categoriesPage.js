@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../model/navbar';
+import Navbar from '../navbar/navbar';
 
 const CategoriesPage = () => (
   <div className="content">

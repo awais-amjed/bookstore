@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Navbar from '../model/navbar';
-import Book from '../model/book';
+import Navbar from '../navbar/navbar';
+import Book from './book';
 
 const BooksPage = () => {
   const booksList = useSelector((state) => state.books);
