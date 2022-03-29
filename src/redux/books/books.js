@@ -8,9 +8,9 @@ const addBook = ({ genre, bookName, authorName }) => ({
   authorName,
 });
 
-const removeBook = ({ index }) => ({
+const removeBook = ({ id }) => ({
   type: REMOVE_BOOK,
-  index,
+  id,
 });
 
 const booksReducer = (state = [], actions) => {
@@ -19,16 +19,14 @@ const booksReducer = (state = [], actions) => {
       return [
         ...state,
         {
+          id: state.length,
           genre: actions.genre,
           bookName: actions.bookName,
           authorName: actions.authorName,
         },
       ];
     case REMOVE_BOOK:
-      return [
-        ...state.slice(0, actions.index),
-        ...state.slice(actions.index + 1, state.length),
-      ];
+      return state.filter((book) => book.id !== actions.id);
     default:
       return state;
   }
