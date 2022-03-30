@@ -13,7 +13,7 @@ const Book = ({
 }) => (
   <li className="book">
     <div className="book-description">
-      <p>{category ?? ''}</p>
+      <p>{category}</p>
       <h3>{bookName}</h3>
       <p>{authorName}</p>
       <div className="book-buttons">
@@ -26,7 +26,7 @@ const Book = ({
       <div className="progress-circle">Progress Circle</div>
       <div className="progress-description">
         <p>
-          {progress}
+          {progress ?? 0}
           %
           <br />
           Completed
@@ -36,10 +36,10 @@ const Book = ({
     <div className="chapter-status">
       <p>CURRENT CHAPTER</p>
       <p>
-        {currentChapter === 0 ? 'Not Started Yet!' : `Chapter ${currentChapter}`}
-        {currentChapter !== 0 && chapterName ? ': "' : ''}
+        {currentChapter > 0 ? `Chapter ${currentChapter}` : 'Not Started Yet!'}
+        {currentChapter > 0 && chapterName ? ': "' : ''}
         {chapterName ?? ''}
-        {currentChapter !== 0 && chapterName ? '"' : ''}
+        {currentChapter > 0 && chapterName ? '"' : ''}
       </p>
       <button type="button">Update Progress</button>
     </div>
@@ -47,19 +47,20 @@ const Book = ({
 );
 
 Book.propTypes = {
-  category: PropTypes.string,
+  category: PropTypes.string.isRequired,
   bookName: PropTypes.string.isRequired,
   authorName: PropTypes.string.isRequired,
-  progress: PropTypes.number.isRequired,
+  progress: PropTypes.number,
   currentChapter: PropTypes.number,
   chapterName: PropTypes.string,
-  onRemove: PropTypes.func.isRequired,
+  onRemove: PropTypes.func,
 };
 
 Book.defaultProps = {
-  category: null,
   currentChapter: null,
   chapterName: null,
+  progress: null,
+  onRemove: null,
 };
 
 export default Book;
