@@ -9,9 +9,19 @@ class BookstoreAPI {
   }).then(async (response) => {
     if (response.ok) {
       try {
-        return await response.json();
+        const data = await response.json();
+        const books = [];
+        Object.entries(data).forEach(
+          ([id, book]) => books.push({
+            id,
+            category: book[0].category,
+            bookName: book[0].title,
+            authorName: book[0].author,
+          }),
+        );
+        return books;
       } catch (e) {
-        return {};
+        return [];
       }
     }
     return null;
