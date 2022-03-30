@@ -4,12 +4,22 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 const DATA_FETCHED = 'DATA_FETCHED';
 
-const addBook = ({ category, bookName, authorName }) => ({
-  type: ADD_BOOK,
-  category,
-  bookName,
-  authorName,
-});
+const addBook = ({
+  id, category, bookName, authorName,
+}) => async (dispatch) => {
+  const result = await BookstoreAPI.addBook({
+    id, bookName, authorName, category,
+  });
+  if (result) {
+    dispatch({
+      type: ADD_BOOK,
+      id,
+      category,
+      bookName,
+      authorName,
+    });
+  }
+};
 
 const removeBook = ({ id }) => ({
   type: REMOVE_BOOK,
@@ -24,7 +34,7 @@ const booksReducer = (state = [], actions) => {
       return [
         ...state,
         {
-          id: state.length === 0 ? 0 : state.at(state.length - 1).id + 1,
+          id: actions.id,
           category: actions.category,
           bookName: actions.bookName,
           authorName: actions.authorName,

@@ -1,9 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from '../../redux/books/books';
 
 const AddBookForm = () => {
   const dispatch = useDispatch();
+  const booksList = useSelector((state) => state.books);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -11,7 +12,15 @@ const AddBookForm = () => {
     const bookNameElement = event.target.elements.bookName;
     const categoryElement = event.target.elements.category;
 
+    let nextID;
+    try {
+      nextID = parseInt(booksList.at(booksList.length - 1).id, 10) + 1;
+    } catch (e) {
+      nextID = 0;
+    }
+
     dispatch(addBook({
+      id: nextID,
       authorName: authorNameElement.value,
       bookName: bookNameElement.value,
       category: categoryElement.value,
