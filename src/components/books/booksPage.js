@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../navbar/navbar';
 import Book from './book';
 import AddBookForm from './addBookForm';
-import { removeBook } from '../../redux/books/books';
+import { fetchBooks, removeBook } from '../../redux/books/books';
 
 const BooksPage = () => {
   const booksList = useSelector((state) => state.books);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
 
   return (
     <div className="content">

@@ -1,30 +1,55 @@
+import BookstoreAPI from '../../components/api/bookstoreAPI';
+
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
+const DATA_FETCHED = 'DATA_FETCHED';
 
-const addBook = ({ bookName, authorName }) => ({
-  type: ADD_BOOK,
-  bookName,
-  authorName,
-});
+const fetchBooks = () => async (dispatch) => {
+  const books = await BookstoreAPI.getAllBooks();
+  if (books) {
+    dispatch({ type: DATA_FETCHED, books });
+  }
+};
 
-const removeBook = ({ id }) => ({
-  type: REMOVE_BOOK,
-  id,
-});
+const addBook = ({
+  id, category, bookName, authorName,
+}) => async (dispatch) => {
+  const result = await BookstoreAPI.addBook({
+    id, bookName, authorName, category,
+  });
+  if (result) {
+    dispatch({
+      type: ADD_BOOK,
+      id,
+      category,
+      bookName,
+      authorName,
+    });
+  }
+};
+
+const removeBook = ({ id }) => async (dispatch) => {
+  const result = await BookstoreAPI.removeBook({ id });
+  if (result) {
+    dispatch({
+      type: REMOVE_BOOK,
+      id,
+    });
+  }
+};
 
 const booksReducer = (state = [], actions) => {
   switch (actions.type) {
+    case DATA_FETCHED:
+      return actions.books;
     case ADD_BOOK:
       return [
         ...state,
         {
-          id: state.length === 0 ? 0 : state.at(state.length - 1).id + 1,
-          category: null,
+          id: actions.id,
+          category: actions.category,
           bookName: actions.bookName,
           authorName: actions.authorName,
-          progress: 0,
-          currentChapter: 0,
-          chapterName: null,
         },
       ];
     case REMOVE_BOOK:
@@ -34,4 +59,6 @@ const booksReducer = (state = [], actions) => {
   }
 };
 
-export { booksReducer as default, addBook, removeBook };
+export {
+  booksReducer as default, addBook, removeBook, fetchBooks,
+};
