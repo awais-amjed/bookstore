@@ -21,10 +21,15 @@ const addBook = ({
   }
 };
 
-const removeBook = ({ id }) => ({
-  type: REMOVE_BOOK,
-  id,
-});
+const removeBook = ({ id }) => async (dispatch) => {
+  const result = await BookstoreAPI.removeBook({ id });
+  if (result) {
+    dispatch({
+      type: REMOVE_BOOK,
+      id,
+    });
+  }
+};
 
 const booksReducer = (state = [], actions) => {
   switch (actions.type) {
