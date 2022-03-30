@@ -4,6 +4,13 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 const DATA_FETCHED = 'DATA_FETCHED';
 
+const fetchBooks = () => async (dispatch) => {
+  const books = await BookstoreAPI.getAllBooks();
+  if (books) {
+    dispatch({ type: DATA_FETCHED, books });
+  }
+};
+
 const addBook = ({
   id, category, bookName, authorName,
 }) => async (dispatch) => {
@@ -50,14 +57,6 @@ const booksReducer = (state = [], actions) => {
     default:
       return state;
   }
-};
-
-const fetchBooks = () => (dispatch) => {
-  BookstoreAPI.getAllBooks().then((books) => {
-    if (books) {
-      dispatch({ type: DATA_FETCHED, books });
-    }
-  });
 };
 
 export {
