@@ -1,6 +1,7 @@
 #new-book-form {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 
   input[type=text] {
     border: 1px solid lightgrey;
