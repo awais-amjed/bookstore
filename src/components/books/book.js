@@ -25,26 +25,28 @@ const Book = ({
         <button type="button">Edit</button>
       </div>
     </div>
-    <div className="progress-status">
-      <img src={circle} alt="Progress Circle" height="40px" />
-      <div className="progress-description">
-        <p>
-          {progress ?? 0}
-          %
-          <br />
-          <p className="completed">Completed</p>
-        </p>
+    <div className="can-go-bottom">
+      <div className="progress-status">
+        <img src={circle} alt="Progress Circle" height="40px" />
+        <div className="progress-description">
+          <p>
+            {progress ?? 0}
+            %
+            <br />
+            <p className="completed">Completed</p>
+          </p>
+        </div>
       </div>
-    </div>
-    <div className="chapter-status">
-      <p className="current-chapter">CURRENT CHAPTER</p>
-      <p className="chapter-number">
-        {currentChapter > 0 ? `Chapter ${currentChapter}` : 'Not Started Yet!'}
-        {currentChapter > 0 && chapterName ? ': "' : ''}
-        {chapterName ?? ''}
-        {currentChapter > 0 && chapterName ? '"' : ''}
-      </p>
-      <button className="blue-button" type="button">Update Progress</button>
+      <div className="chapter-status">
+        <p className="current-chapter">CURRENT CHAPTER</p>
+        <p className="chapter-number">
+          {currentChapter > 0 ? `Chapter ${currentChapter}` : 'Not Started Yet!'}
+          {currentChapter > 0 && chapterName ? ': "' : ''}
+          {chapterName ?? ''}
+          {currentChapter > 0 && chapterName ? '"' : ''}
+        </p>
+        <button className="blue-button" type="button">Update Progress</button>
+      </div>
     </div>
   </li>
 );
