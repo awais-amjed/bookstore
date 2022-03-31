@@ -1,0 +1,55 @@
+$azure-color: #0290ff;
+$inactive-color: darkgrey;
+$active-color: black;
+
+header {
+  inset: 0;
+  display: flex;
+  position: fixed;
+  height: 80px;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 10%;
+  justify-content: space-between;
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: unset;
+
+    h1 {
+      color: $azure-color;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+
+      a {
+        text-decoration: none;
+        color: $inactive-color;
+      }
+
+      a:hover {
+        color: $active-color;
+      }
+
+      .active {
+        color: $active-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  header {
+    height: 60px;
+
+    .nav-left {
+      flex-direction: row;
+      gap: 50px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './book.scss';
 import PropTypes from 'prop-types';
+import circle from '../images/circle.png';
 
 const Book = ({
   category,
@@ -13,35 +14,39 @@ const Book = ({
 }) => (
   <li className="book">
     <div className="book-description">
-      <p>{category}</p>
-      <h3>{bookName}</h3>
-      <p>{authorName}</p>
+      <p className="category">{category}</p>
+      <h3 className="book-name">{bookName}</h3>
+      <p className="author-name">{authorName}</p>
       <div className="book-buttons">
         <button type="button">Comments</button>
+        <div className="vr" />
         <button type="button" onClick={onRemove}>Remove</button>
+        <div className="vr" />
         <button type="button">Edit</button>
       </div>
     </div>
-    <div className="progress-status">
-      <div className="progress-circle">Progress Circle</div>
-      <div className="progress-description">
-        <p>
-          {progress ?? 0}
-          %
-          <br />
-          Completed
-        </p>
+    <div className="can-go-bottom">
+      <div className="progress-status">
+        <img src={circle} alt="Progress Circle" height="40px" />
+        <div className="progress-description">
+          <p>
+            {progress ?? 0}
+            %
+            <br />
+            <p className="completed">Completed</p>
+          </p>
+        </div>
       </div>
-    </div>
-    <div className="chapter-status">
-      <p>CURRENT CHAPTER</p>
-      <p>
-        {currentChapter > 0 ? `Chapter ${currentChapter}` : 'Not Started Yet!'}
-        {currentChapter > 0 && chapterName ? ': "' : ''}
-        {chapterName ?? ''}
-        {currentChapter > 0 && chapterName ? '"' : ''}
-      </p>
-      <button type="button">Update Progress</button>
+      <div className="chapter-status">
+        <p className="current-chapter">CURRENT CHAPTER</p>
+        <p className="chapter-number">
+          {currentChapter > 0 ? `Chapter ${currentChapter}` : 'Not Started Yet!'}
+          {currentChapter > 0 && chapterName ? ': "' : ''}
+          {chapterName ?? ''}
+          {currentChapter > 0 && chapterName ? '"' : ''}
+        </p>
+        <button className="blue-button" type="button">Update Progress</button>
+      </div>
     </div>
   </li>
 );

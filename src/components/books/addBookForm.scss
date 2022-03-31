@@ -1,0 +1,19 @@
+#new-book-form {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  input[type=text] {
+    border: 1px solid lightgrey;
+    padding: 5px 15px;
+    flex-grow: 1;
+  }
+
+  input::placeholder {
+    color: darkgrey;
+  }
+
+  .book-name {
+    flex-grow: 3;
+  }
+}

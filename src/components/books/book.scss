@@ -2,14 +2,95 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 10%;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 10px 30px;
+  border: 1px solid lightgrey;
+  padding: 15px 30px;
+  background-color: white;
+
+  .book-description {
+    flex-basis: 50%;
+
+    .category {
+      color: grey;
+      font-size: 0.9rem;
+    }
+
+    .book-name {
+      font-size: 1.5rem;
+    }
+
+    .author-name {
+      color: dodgerblue;
+      font-size: 0.9rem;
+    }
+
+    .book-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+
+      .vr {
+        height: 20px;
+        width: 1px;
+        background-color: lightgrey;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        color: dodgerblue;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .can-go-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 50%;
+  }
 
   .progress-status {
     display: flex;
     align-items: center;
+    gap: 15px;
+
+    p {
+      font-weight: 500;
+    }
+
+    .completed {
+      color: darkgrey;
+      font-size: 0.8rem;
+    }
+  }
+
+  .chapter-status {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .current-chapter {
+      color: darkgrey;
+      font-size: 0.9rem;
+    }
+
+    .blue-button {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .book {
+    flex-direction: column;
+    align-items: start;
     gap: 20px;
+
+    .can-go-bottom {
+      width: 100%;
+    }
   }
 }
