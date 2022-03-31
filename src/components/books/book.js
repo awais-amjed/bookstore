@@ -1,6 +1,7 @@
 import React from 'react';
 import './book.scss';
 import PropTypes from 'prop-types';
+import circle from '../images/circle.png';
 
 const Book = ({
   category,
@@ -13,35 +14,37 @@ const Book = ({
 }) => (
   <li className="book">
     <div className="book-description">
-      <p>{category}</p>
-      <h3>{bookName}</h3>
-      <p>{authorName}</p>
+      <p className="category">{category}</p>
+      <h3 className="book-name">{bookName}</h3>
+      <p className="author-name">{authorName}</p>
       <div className="book-buttons">
         <button type="button">Comments</button>
+        <div className="vr" />
         <button type="button" onClick={onRemove}>Remove</button>
+        <div className="vr" />
         <button type="button">Edit</button>
       </div>
     </div>
     <div className="progress-status">
-      <div className="progress-circle">Progress Circle</div>
+      <img src={circle} alt="Progress Circle" height="40px" />
       <div className="progress-description">
         <p>
           {progress ?? 0}
           %
           <br />
-          Completed
+          <p className="completed">Completed</p>
         </p>
       </div>
     </div>
     <div className="chapter-status">
-      <p>CURRENT CHAPTER</p>
-      <p>
+      <p className="current-chapter">CURRENT CHAPTER</p>
+      <p className="chapter-number">
         {currentChapter > 0 ? `Chapter ${currentChapter}` : 'Not Started Yet!'}
         {currentChapter > 0 && chapterName ? ': "' : ''}
         {chapterName ?? ''}
         {currentChapter > 0 && chapterName ? '"' : ''}
       </p>
-      <button type="button">Update Progress</button>
+      <button className="progress-button" type="button">Update Progress</button>
     </div>
   </li>
 );

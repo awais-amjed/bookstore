@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../navbar/navbar';
 import Book from './book';
 import AddBookForm from './addBookForm';
+import './booksPage.scss';
 import { fetchBooks, removeBook } from '../../redux/books/books';
 
 const BooksPage = () => {

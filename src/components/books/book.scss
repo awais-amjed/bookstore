@@ -2,14 +2,87 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 10%;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 10px 30px;
+  border: 1px solid lightgrey;
+  padding: 15px 30px;
+  background-color: white;
+
+  .book-description {
+    .category {
+      color: grey;
+      font-size: 0.9rem;
+    }
+
+    .book-name {
+      font-size: 1.5rem;
+    }
+
+    .author-name {
+      color: dodgerblue;
+      font-size: 0.9rem;
+    }
+
+    .book-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+
+      .vr {
+        height: 20px;
+        width: 1px;
+        background-color: lightgrey;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        color: dodgerblue;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+    }
+  }
 
   .progress-status {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+
+    p {
+      font-weight: 500;
+    }
+
+    .completed {
+      color: darkgrey;
+      font-size: 0.8rem;
+    }
+  }
+
+  .chapter-status {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .current-chapter {
+      color: darkgrey;
+      font-size: 0.9rem;
+    }
+
+    .progress-button {
+      margin-top: 10px;
+      background-color: #0290ff;
+      color: white;
+      font-size: 0.8rem;
+      padding: 5px 20px;
+      border-radius: 3px;
+      border: 2px solid #0290ff;
+    }
+
+    .progress-button:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
   }
 }
