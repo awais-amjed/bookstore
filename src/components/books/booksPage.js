@@ -40,6 +40,7 @@ const BooksPage = () => {
             />
           ))}
         </ul>
+        <hr />
         <div id="add-book">
           <h2>ADD NEW BOOK</h2>
           <AddBookForm />

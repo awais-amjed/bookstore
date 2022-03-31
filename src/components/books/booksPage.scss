@@ -1,6 +1,22 @@
-#books-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 50px;
+#books-page {
+  #books-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  hr {
+    border-top: 1px solid #e1e1e1;
+    margin-block: 50px;
+  }
+
+  #add-book {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+      color: #727272;
+    }
+  }
 }
