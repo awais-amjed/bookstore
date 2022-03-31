@@ -44,7 +44,7 @@ const Book = ({
         {chapterName ?? ''}
         {currentChapter > 0 && chapterName ? '"' : ''}
       </p>
-      <button className="progress-button" type="button">Update Progress</button>
+      <button className="blue-button" type="button">Update Progress</button>
     </div>
   </li>
 );

@@ -1,5 +1,20 @@
 .content {
   margin: 100px 10% 30px;
+
+  .blue-button {
+    background-color: #0290ff;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 20px;
+    border-radius: 3px;
+    border: 2px solid #0290ff;
+  }
+
+  .blue-button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 700px) {

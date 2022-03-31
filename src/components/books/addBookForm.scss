@@ -2,7 +2,7 @@
   display: flex;
   gap: 20px;
 
-  input {
+  input[type=text] {
     border: 1px solid lightgrey;
     padding: 5px 15px;
     flex-grow: 1;

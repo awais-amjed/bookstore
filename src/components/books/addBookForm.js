@@ -37,7 +37,7 @@ const AddBookForm = () => {
       <input className="book-name" type="text" placeholder="Book Title" name="bookName" required />
       <input type="text" placeholder="Author" name="authorName" required />
       <input type="text" placeholder="Category" name="category" required />
-      <input type="submit" value="ADD BOOK" />
+      <input className="blue-button" type="submit" value="ADD BOOK" />
     </form>
   );
 };
