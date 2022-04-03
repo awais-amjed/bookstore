@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Navbar from '../navbar/navbar';
 import { checkStatus } from '../../redux/categories/categories';
 import './categoriesPage.scss';
 
@@ -11,7 +10,6 @@ const CategoriesPage = () => {
   return (
     <div className="content">
       <div id="categories-page">
-        <Navbar />
         <button className="blue-button" type="button" onClick={() => dispatch(checkStatus())}>Check Status</button>
         <p>{status}</p>
       </div>
