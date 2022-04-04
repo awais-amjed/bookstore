@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Navbar from '../navbar/navbar';
 import Book from './book';
 import AddBookForm from './addBookForm';
 import './booksPage.scss';
@@ -17,7 +16,6 @@ const BooksPage = () => {
   return (
     <div className="content">
       <div id="books-page">
-        <Navbar />
         <ul id="books-list">
           {booksList.map(({
             id,
